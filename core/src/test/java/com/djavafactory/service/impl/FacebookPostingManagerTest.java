@@ -16,8 +16,7 @@ public class FacebookPostingManagerTest extends BaseManagerTestCase {
 
     @Test
     public void testPost() throws Exception{
-        facebookPostingManager.post("hello world");
-
+        //facebookPostingManager.post("hello world");
 
     }
 
