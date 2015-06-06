@@ -143,23 +143,39 @@
         <column>expiredDate</column>
         <column>registeredDate</column>
         <column>userId</column>
+        <column>address</column>
+        <column>city</column>
+        <column>country</column>
+        <column>postal_code</column>
     <row>
         <value description="id">-1</value>
-        <value description="expiredDate">2015-06-06</value>
+        <value description="expiredDate">2015-06-30</value>
         <value description="registeredDate">2015-06-06</value>
         <value description="userId">-1</value>
+        <value description="address">123, Laman G</value>
+        <value description="city">KL</value>
+        <value description="country">MY</value>
+        <value description="postal_code">40150</value>
     </row>
     <row>
         <value description="id">-2</value>
-        <value description="expiredDate">2015-06-06</value>
+        <value description="expiredDate">2015-06-30</value>
         <value description="registeredDate">2015-06-06</value>
         <value description="userId">-1</value>
+        <value description="address">444, Laman G</value>
+        <value description="city">KL</value>
+        <value description="country">MY</value>
+        <value description="postal_code">40150</value>
     </row>
     <row>
         <value description="id">-3</value>
-        <value description="expiredDate">2015-06-06</value>
+        <value description="expiredDate">2015-06-30</value>
         <value description="registeredDate">2015-06-06</value>
         <value description="userId">-1</value>
+        <value description="address">555, Laman G</value>
+        <value description="city">KL</value>
+        <value description="country">MY</value>
+        <value description="postal_code">40150</value>
     </row>
     </table>
 
