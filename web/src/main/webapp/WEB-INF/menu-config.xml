@@ -19,6 +19,9 @@
         <!--DonationItem-START-->
         <Menu name="DonationItemMenu" title="donationItemList.title" page="/donationItems"/>
         <!--DonationItem-END-->
+        <!--Organization-START-->
+        <Menu name="OrganizationMenu" title="organizationList.title" page="/organizations"/>
+        <!--Organization-END-->
     </Menus>
 
 

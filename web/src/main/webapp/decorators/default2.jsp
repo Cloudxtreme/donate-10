@@ -89,9 +89,9 @@
       <div class="col-lg-12">
         <img class="img-responsive" src="${base}/styles/helpinghand/img/profile.png" alt="">
         <div class="intro-text">
-          <span class="name">Start Bootstrap</span>
+          <span class="name">Be a Ninja Helper!</span>
           <hr class="star-light">
-          <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+          <span class="skills">Ninja - Donor - Bad Ass</span>
         </div>
       </div>
     </div>
@@ -183,16 +183,13 @@
     </div>
     <div class="row">
       <div class="col-lg-4 col-lg-offset-2">
-        <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+        <p>We are a bunch of people committed in helping the world 1 item at a time. </p>
       </div>
       <div class="col-lg-4">
-        <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+        <p>Go on donate and grab your Ninja points</p>
       </div>
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-        <a href="#" class="btn btn-lg btn-outline">
-          <i class="fa fa-download"></i> Download Theme
-        </a>
-      </div>
+
+
     </div>
   </div>
 </section>
@@ -202,7 +199,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Contact Me</h2>
+        <h2>Contact Us</h2>
         <hr class="star-primary">
       </div>
     </div>

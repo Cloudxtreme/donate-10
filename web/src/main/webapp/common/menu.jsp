@@ -18,6 +18,9 @@
     <!--DonationItem-START-->
     <menu:displayMenu name="DonationItemMenu"/>
     <!--DonationItem-END-->
+    <!--Organization-START-->
+    <menu:displayMenu name="OrganizationMenu"/>
+    <!--Organization-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>
