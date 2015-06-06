@@ -6,24 +6,24 @@
     <artifactId>donate</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>AppFuse Modular Application</name>
-    <url>http://www.mycompany.com</url>
+    <name>Donate</name>
+    <url>http://www.djavafactory.com</url>
 
     <prerequisites>
         <maven>3.1.0</maven>
     </prerequisites>
 
-    <!--<licenses>
+    <licenses>
         <license>
-            <name></name>
-            <url></url>
+            <name>GPL</name>
+            <url>GPL</url>
         </license>
     </licenses>
 
     <scm>
-        <connection></connection>
-        <developerConnection></developerConnection>
-        <url></url>
+        <connection>https://github.com/akang/donate.git</connection>
+        <developerConnection>https://github.com/akang/donate.git</developerConnection>
+        <url>https://github.com/akang/donate.git</url>
     </scm>
 
     <issueManagement>
@@ -33,12 +33,54 @@
 
     <developers>
         <developer>
-            <id></id>
-            <name></name>
-            <email></email>
-            <timezone></timezone>
+            <id>akang</id>
+            <name>Allan Kenneth Ang</name>
+            <email>allkenang@gmail.com</email>
+            <timezone>GMT +8</timezone>
         </developer>
-    </developers>-->
+        <developer>
+            <id>hazlan</id>
+            <name>Hazlan Rozaimi</name>
+            <email>hazlan@gmail.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>hairi</id>
+            <name>Mohd Khushairi</name>
+            <email>mohd.khushairi@gmail.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>toni</id>
+            <name>Toni Liem</name>
+            <email>toni.xm@gmail.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>mohan</id>
+            <name>Mohan</name>
+            <email>mohanakanan82@gmail.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>dzung</id>
+            <name>Dzung</name>
+            <email>dzung.chu@djavafactory.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>Vu</id>
+            <name>Vu</name>
+            <email>duongvu.nguyen@djavafactory.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+        <developer>
+            <id>arif</id>
+            <name>Arif</name>
+            <email>arif.susanto@djavafactory.com</email>
+            <timezone>GMT +8</timezone>
+        </developer>
+    </developers>
 
     <build>
         <defaultGoal>install</defaultGoal>
@@ -369,8 +411,8 @@
         <jdbc.version>5.1.27</jdbc.version>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
         <jdbc.url>jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
-        <jdbc.username>root</jdbc.username>
-        <jdbc.password/>
+        <jdbc.username>donate</jdbc.username>
+        <jdbc.password>password</jdbc.password>
         <jdbc.validationQuery>SELECT 1 + 1</jdbc.validationQuery>
     </properties>
   <modules>
