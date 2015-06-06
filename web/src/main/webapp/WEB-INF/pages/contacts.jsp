@@ -21,7 +21,7 @@
             <input type="text" size="20" name="q" id="query" value="${param.q}"
                    placeholder="<fmt:message key="search.enterTerms"/>" class="form-control input-sm"/>
         </span>
-        <button id="button.search" class="btn btn-default" type="submit">
+        <button id="button.search" class="btn btn-sm" type="submit">
             <i class="icon-search"></i> <fmt:message key="button.search"/>
         </button>
     </div>
@@ -29,6 +29,7 @@
 
     <fmt:message key="contactList.message"/>
 
+    <br/><br/>
     <div id="actions" class="btn-group">
         <a href='<c:url value="/contactform"/>' class="btn btn-primary">
             <i class="icon-plus icon-white"></i> <fmt:message key="button.add"/></a>

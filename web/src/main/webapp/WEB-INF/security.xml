@@ -21,6 +21,7 @@
         <intercept-url pattern="/app/updatePassword*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER" />
         <intercept-url pattern="/app/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/app/landing*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/app/contactform/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
 
         <intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/>
         <intercept-url pattern="/app/**" access="ROLE_ADMIN,ROLE_USER"/>
