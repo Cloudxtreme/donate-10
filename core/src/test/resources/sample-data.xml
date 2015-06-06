@@ -120,20 +120,20 @@
         </row>
     </table>
     <!--ItemCategory-START-->
-    <table name="ITEM_CATEGORY">
+    <table name="item_category">
         <column>id</column>
         <column>name</column>
     <row>
-        <value description="id">-1</value>
-        <value description="name">CnTdIfCcDyBzJvQbOdFeKmXpDkLrRfNqWvJbRgWuJgUiZgZbKtSoIhRjWiRjEjTkGwCeJmFpYsFzMqQdJnLtIjYgXyTcDwVnRlEdAkVkRsKpFsExNmFxRwNoYvJyLuOdXoWbHgSdVlTaWlHuEoGhGrDyUnOqUuSkOgMoDnLdUpHxOiUxFkPqVdVcFyClFpSoXsZbYwRvSwCnLuOjHwTqKzOjXhIzHiDdYrOpHcVoXvDbCzXrWeInBnAxTxXwEmS</value>
+        <value description="id">1</value>
+        <value description="name">Clothes</value>
     </row>
     <row>
-        <value description="id">-2</value>
-        <value description="name">TsXoNsTbTyFgAsNxKqXiFtIqTiRwWmAjSvDxOtQpHnGkUxYpEiSgNsXeOpNgApNvHfEfJiPbGeGfTkVlXnUyNtQdFyFjOeVdWkCtZjXhRkQqGqUiEuDbLbArZiKdCbApRnBhToHgScCbFlFiAhKkNeKrQzWuLbCaNcYgLoXjDeWoQmNeWjWfIcIdZxZoDjTyYsQfOeYxXhOjRlPwPjMqGwZvVbScQfNpKeErZaXtZeXqRwLeHbPqDfBzQlLpPhW</value>
+        <value description="id">2</value>
+        <value description="name">Food</value>
     </row>
     <row>
-        <value description="id">-3</value>
-        <value description="name">NdRoUwLyJpWzMrVgYpVnZkOnPfViQjEdXpMkVpLnZpIqEcGkKyNlSfDeOxDwVwGyZxTcJlEcFbKfTqHaKrGvMwOxNnUoGoNpPyLfFwLpPgVhQjXpNjSuPtNqMfTdNwEbHaTcFnMmRqRxUgVbZtMtAcRaCyBrUmUyFrPnMiEmGmXaXwQvXmUmQkXdWwQdBlJtXvNcVyHnTgIfXfIfYnKjXuVnXbFhDbCsOzOhMfEvCrQjSwRhZjWuPvLjRrNpBcB</value>
+        <value description="id">3</value>
+        <value description="name">Shelter</value>
     </row>
     </table>
     <!--ItemCategory-END-->
@@ -162,33 +162,7 @@
         <value description="userId">1932920761011902464</value>
     </row>
     </table>
-    <!--DonationRequest-END-->
-    <!--DonationItem-START-->
-    <table name="DONATION">
-        <column>id</column>
-        <column>CATEGORY_ID</column>
-        <column>itemDescription</column>
-        <column>qty</column>
-    <row>
-        <value description="id">-1</value>
-        <value description="CATEGORY_ID">-1</value>
-        <value description="itemDescription">XqDjItWfSpAfNcSrIsVfCvGiLiOsSmWmWvRrWiIcGoWoSzPxFdNjZmXtXpAcFwRrZlVvVrNyQdNfMcCbEgWrPoKzSyCbVoHqUzGjTeTgPjDpPuJbThPfNtJlRtInXaNkFgDzJcMgHnVfEwZpDaOnHrTiVkOvFlNyCyVhFoMfRzCoAtMoMtMtXyIjLuTcFtCdZnMpKmWyFlGdFrNyJdPcWcPbMhHeBfEiLkWzRwImVjGcYmUzPrZpEhNzXrGmGcR</value>
-        <value description="qty">157282211</value>
-    </row>
-    <row>
-        <value description="id">-2</value>
-        <value description="CATEGORY_ID">-2</value>
-        <value description="itemDescription">IgWrPlAcDsSoPhSeFxNbYsAmUoBnFtPyIsRoHkFqVxCwEtWgSoZgUvFlDwLeJsEtChSdYkJwKxLnWkCoMfIjEcJnKvNqIjOcDlKoCxSkCuWpVcPlTuIvZvUlYwGiKjQvHaMxUsSmBmSnJcJlMxHcNoAqTaAiEzYhJvLyCuYkUpXuFaWtNwHbQeMdVmOtSbCcAoGtBhGzWpIjEhZgHgKkGvArBmDoPsHzVyGzOtAgXlSuBpEjLvIhTtAaGhVrMuD</value>
-        <value description="qty">480264436</value>
-    </row>
-    <row>
-        <value description="id">-3</value>
-        <value description="CATEGORY_ID">-3</value>
-        <value description="itemDescription">SeLdPwZkRcLdNzYkWhGkGkRsPpJfTeQqRlWdYaVfQpFqTtKhZuTeKyHwWbWwRrPvJvKfYmNkLfDaTvJcEhLeBvGfUdYzIxAmQqQyJtOjFvSwLpJkRiGuWwWpMeHiJoBgOlErWxQiKuZgOlEjKcMlCgRpLrFmNvCmHcYaLoLiLsLqEcLjJrTlYzXgKyLhVgVpTiCsHxYbHuXbDvRwBoIsUrDkVxMvMpAhYbTuTxNgMdClBfIjHkVmAiNwKdUeRbF</value>
-        <value description="qty">1088094557</value>
-    </row>
-    </table>
-    <!--DonationItem-END-->
+
     <!--Organization-START-->
     <table name="Organization">
         <column>id</column>
