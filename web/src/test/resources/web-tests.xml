@@ -24,7 +24,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,DonationItemTests,DonationRequestTests"
+        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,DonationItemTests,DonationRequestTests,OrganizationTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -443,6 +443,100 @@
             </steps>
         </webtest>
     </target>    <!--DonationItem-END-->
+    <!--Organization-START-->
+    <!-- runs organization-related tests -->
+    <target name="OrganizationTests"
+            depends="SearchOrganizations,EditOrganization,SaveOrganization,AddOrganization,DeleteOrganization"
+            description="Call and executes all organization test cases (targets)">
+        <echo>Successfully ran all Organization UI tests!</echo>
+    </target>
+
+    <!-- Verify the organizations list screen displays without errors -->
+    <target name="SearchOrganizations" description="Tests search for and displaying all organizations">
+        <webtest name="searchOrganizations">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View Organization link" url="/organizations"/>
+                <verifytitle description="we should see the organizationList title"
+                    text=".*${organizationList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the organizationList title"
+                    text=".*${organizationList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit organization screen displays without errors -->
+    <target name="EditOrganization" description="Tests editing an existing Organization's information">
+        <webtest name="editOrganization">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View Organization List" url="/organizations"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the organizationDetail title"
+                    text=".*${organizationDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a organization and then save -->
+    <target name="SaveOrganization" description="Tests editing and saving a organization">
+        <webtest name="saveOrganization">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Organization link" url="/organizationform?id=-1"/>
+                <verifytitle description="we should see the organizationDetail title"
+                    text=".*${organizationDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${organizationDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${organization.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new Organization -->
+    <target name="AddOrganization" description="Adds a new Organization">
+        <webtest name="addOrganization">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/organizationform"/>
+                <verifytitle description="we should see the organizationDetail title"
+                    text=".*${organizationDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="Organization List appears if save successful"
+                    text=".*${organizationList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${organization.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing organization -->
+    <target name="DeleteOrganization" description="Deletes existing Organization">
+        <webtest name="deleteOrganization">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Organization link" url="/organizationform?id=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display Organization List" text=".*${organizationList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${organization.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--Organization-END-->
 </project>
 
 
