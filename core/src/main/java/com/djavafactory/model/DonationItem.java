@@ -30,7 +30,6 @@ public class DonationItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
     public Long getId() {
         return id;
     }
@@ -48,6 +47,7 @@ public class DonationItem {
         this.itemDescription = itemDescription;
     }
 
+    @Column(name = "qty")
     public Integer getQty() {
         return qty;
     }
@@ -85,6 +85,7 @@ public class DonationItem {
     public void setDonatorUserId(Long donatorUserId) {
         this.donatorUserId = donatorUserId;
     }
+
     @ManyToOne
     @JoinColumn(name = "donator_user_id", referencedColumnName = "id", insertable = false, updatable = false)
     public User getDonatorUser() {
