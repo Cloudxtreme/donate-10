@@ -7,22 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
- * @author aka
- * @date: 06 June 2015
+ * Created by user on 6/6/2015.
  */
-public class FacebookPostingManagerTest extends BaseManagerTestCase {
-
+public class TwitterPostingManagerTest extends BaseManagerTestCase {
     @Autowired
-    @Qualifier(value = "facebookPostingManagerImpl")
-    SocialPostingManager facebookPostingManager;
-
+    @Qualifier(value = "twitterPostingManagerImpl")
+    SocialPostingManager twitterPostingManager;
     @Test
     public void testPost() throws Exception{
-        facebookPostingManager.post("hello world");
-
-
+        twitterPostingManager.post("hello world");
     }
-
-
-
 }
