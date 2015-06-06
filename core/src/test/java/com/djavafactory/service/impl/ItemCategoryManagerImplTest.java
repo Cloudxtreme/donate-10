@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.djavafactory.dao.ItemCategoryDao;
 import com.djavafactory.model.ItemCategory;
-import org.appfuse.service.impl.BaseManagerMockTestCase;
+import com.djavafactory.service.impl.BaseManagerMockTestCase;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

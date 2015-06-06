@@ -68,7 +68,11 @@
     </rule>
     <rule>
         <from>/login*</from>
-        <to>/login.jsp</to>
+        <to>/login2.jsp</to>
+    </rule>
+    <rule>
+        <from>/login2*</from>
+        <to>/login2.jsp</to>
     </rule>
     <rule>
         <from>/logout*</from>

@@ -1,15 +1,13 @@
 package com.djavafactory.webapp.controller;
 
-import org.apache.commons.lang.StringUtils;
-import com.djavafactory.service.ContactManager;
 import com.djavafactory.model.Contact;
-import com.djavafactory.webapp.controller.BaseFormController;
-
+import com.djavafactory.service.ContactManager;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,7 +33,7 @@ public class ContactFormController extends BaseFormController {
     @ModelAttribute
     @RequestMapping(method = RequestMethod.GET)
     protected Contact showForm(HttpServletRequest request)
-    throws Exception {
+            throws Exception {
         String id = request.getParameter("id");
 
         if (!StringUtils.isBlank(id)) {
@@ -45,10 +43,11 @@ public class ContactFormController extends BaseFormController {
         return new Contact();
     }
 
+
     @RequestMapping(method = RequestMethod.POST)
     public String onSubmit(Contact contact, BindingResult errors, HttpServletRequest request,
                            HttpServletResponse response)
-    throws Exception {
+            throws Exception {
         if (request.getParameter("cancel") != null) {
             return getCancelView();
         }
@@ -76,10 +75,27 @@ public class ContactFormController extends BaseFormController {
             saveMessage(request, getText(key, locale));
 
             if (!isNew) {
-                success = "redirect:contactform?id=" + contact.getId();
+                success = "redirect:/contactform?id=" + contact.getId();
             }
         }
 
         return success;
+    }
+
+
+    @RequestMapping(value = "/front/{name}/{phone}/{email}/{message}", method = RequestMethod.GET)
+    public String frontSubmit(HttpServletRequest request, @PathVariable("name") String name, @PathVariable("phone") String phone,@PathVariable("email") String email,@PathVariable("message") String message) throws Exception {
+
+        System.out.println("success! "+ name+phone+email+message);
+
+        Contact contact = new Contact();
+        contact.setName(name);
+        contact.setPhoneNo(phone);
+        contact.setEmail(email);
+        contact.setMessage(message);
+
+        contactManager.save(contact);
+
+        return "redirect:/landing";
     }
 }

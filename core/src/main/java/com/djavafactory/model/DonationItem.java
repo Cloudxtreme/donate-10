@@ -1,18 +1,11 @@
 package com.djavafactory.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.util.Date;
 
 /**
  * Created by toni on 6/6/15.
@@ -28,6 +21,11 @@ public class DonationItem {
     private Integer qty;
     @XmlElement
     private ItemCategory category;
+
+    private Long donatorUserId;
+    private User donatorUser;
+    private Date donatedDate;
+
     private DonationRequest donationRequest;
 
     @Id
@@ -79,19 +77,31 @@ public class DonationItem {
         this.donationRequest = donationRequest;
     }
 
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        DonationItem donation = (DonationItem) o;
-
-        return id.equals(donation.id);
-
+    @Column(name = "donator_user_id")
+    public Long getDonatorUserId() {
+        return donatorUserId;
     }
 
-    @Override
-    public int hashCode() {
-        return id.hashCode();
+    public void setDonatorUserId(Long donatorUserId) {
+        this.donatorUserId = donatorUserId;
+    }
+    @ManyToOne
+    @JoinColumn(name = "donator_user_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public User getDonatorUser() {
+        return donatorUser;
+    }
+
+    public void setDonatorUser(User donatorUser) {
+        this.donatorUser = donatorUser;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDonatedDate() {
+        return donatedDate;
+    }
+
+    public void setDonatedDate(Date donatedDate) {
+        this.donatedDate = donatedDate;
     }
 }
 

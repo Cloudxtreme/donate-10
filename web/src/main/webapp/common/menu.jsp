@@ -9,9 +9,6 @@
         </li>
     </c:if>
     <menu:displayMenu name="Home"/>
-    <menu:displayMenu name="UserMenu"/>
-    <menu:displayMenu name="AdminMenu"/>
-    <menu:displayMenu name="Logout"/>
     <!--DonationRequest-START-->
     <menu:displayMenu name="DonationRequestMenu"/>
     <!--DonationRequest-END-->
@@ -21,6 +18,10 @@
     <!--Organization-START-->
     <menu:displayMenu name="OrganizationMenu"/>
     <!--Organization-END-->
+    <menu:displayMenu name="UserMenu"/>
+    <menu:displayMenu name="AdminMenu"/>
+    <menu:displayMenu name="Logout"/>
+
 </ul>
 </div>
 </menu:useMenuDisplayer>
