@@ -12,7 +12,7 @@ public final class Constants {
         // hide me
     }
     //~ Static fields/initializers =============================================
-   
+      
     /**
      * Assets Version constant
      */   
