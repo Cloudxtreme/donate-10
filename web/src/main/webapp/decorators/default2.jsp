@@ -23,17 +23,9 @@
 
   <!-- Custom Fonts -->
   <link href="${base}/styles/helpinghand/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
 
 
   <decorator:head/>
@@ -61,15 +53,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-
-
-
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#donate">Donate</a>
+          <a href="#portfolio">Donate</a>
         </li>
         <li class="page-scroll">
           <a href="#about">About</a>
@@ -104,7 +93,7 @@
 </header>
 
 <!-- Donate Grid Section -->
-<section id="donate">
+<section id="portfolio">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -193,7 +182,6 @@
       <div class="col-lg-4">
         <p>Go on donate and grab your Ninja points</p>
       </div>
-
 
     </div>
   </div>
@@ -341,6 +329,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -378,6 +369,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -415,6 +409,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -452,6 +449,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -489,6 +489,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
