@@ -12,6 +12,9 @@
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
+    <!--DonationRequest-START-->
+    <menu:displayMenu name="DonationRequestMenu"/>
+    <!--DonationRequest-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

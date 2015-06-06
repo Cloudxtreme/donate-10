@@ -8,5 +8,6 @@
     <session-factory>
         <mapping class="com.djavafactory.model.User"/>
         <mapping class="com.djavafactory.model.Role"/>
+        <mapping class="com.djavafactory.model.DonationRequest"/>
     </session-factory>
 </hibernate-configuration>

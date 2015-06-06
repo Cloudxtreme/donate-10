@@ -50,5 +50,9 @@
                 <arg key="user.password"/>
             </field>
         </form>
+        <!--DonationRequest-START-->
+        <form name="donationRequest">
+        </form>
+        <!--DonationRequest-END-->
     </formset>
 </form-validation>
