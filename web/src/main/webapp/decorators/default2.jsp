@@ -23,12 +23,9 @@
 
   <!-- Custom Fonts -->
   <link href="${base}/styles/helpinghand/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-
-
-
 
 
   <decorator:head/>
@@ -56,15 +53,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-
-
-
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#donate">Donate</a>
+          <a href="#portfolio">Donate</a>
         </li>
         <li class="page-scroll">
           <a href="#about">About</a>
@@ -99,7 +93,7 @@
 </header>
 
 <!-- Donate Grid Section -->
-<section id="donate">
+<section id="portfolio">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -188,7 +182,6 @@
       <div class="col-lg-4">
         <p>Go on donate and grab your Ninja points</p>
       </div>
-
 
     </div>
   </div>

@@ -10,4 +10,6 @@ import com.djavafactory.model.DonationItem;
 public interface DonationItemDao extends GenericDao<DonationItem, Long> {
 
 	public List<DonationItem> findByDonationRequest(Long requestId);
+
+	List<DonationItem> getActiveItems();
 }

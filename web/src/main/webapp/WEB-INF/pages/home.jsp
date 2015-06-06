@@ -10,7 +10,6 @@
 #t-cards {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 25%;   
     background-position: center;
     height: 300px; 
     position: centre;
@@ -133,7 +132,6 @@
 			                <div class="panel panel-default panel-card">
 			                    <div class="panel-heading">
 			                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
-			                        <button class="btn btn-primary btn-sm" role="button">Follow</button>
 			                    </div>
 			                    <div class="panel-figure">
 			                        <img class="img-responsive img-circle" src="/images/Hand_GET.png" />
@@ -148,13 +146,12 @@
 			                <div class="panel panel-default panel-card">
 			                    <div class="panel-heading">
 			                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
-			                        <button class="btn btn-primary btn-sm" role="button">Follow</button>
 			                    </div>
 			                    <div class="panel-figure">
 			                        <img class="img-responsive img-circle" src="/images/Hand-GIVE.png" />
 			                    </div>
 			                    <div class="panel-body text-center">
-			                        <h4 class="panel-header"><a href='<c:url value="/donationRequestsform"/>'><b><fmt:message key="home.giveHelp"/></b></a></h4> 
+			                        <h4 class="panel-header"><a href='<c:url value="/showCurrentDonationRequests"/>'><b><fmt:message key="home.giveHelp"/></b></a></h4>
 			                    </div>
 			            	</div>  
 			    		</div>
