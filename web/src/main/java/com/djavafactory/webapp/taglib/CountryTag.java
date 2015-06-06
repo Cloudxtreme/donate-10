@@ -1,6 +1,6 @@
 package com.djavafactory.webapp.taglib;
 
-import org.appfuse.model.LabelValue;
+import com.djavafactory.model.LabelValue;
 import org.displaytag.tags.el.ExpressionEvaluator;
 
 import javax.servlet.jsp.JspException;

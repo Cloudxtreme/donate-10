@@ -2,9 +2,9 @@ package com.djavafactory.webapp.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.appfuse.model.User;
-import org.appfuse.service.MailEngine;
-import org.appfuse.service.UserManager;
+import com.djavafactory.model.User;
+import com.djavafactory.service.MailEngine;
+import com.djavafactory.service.UserManager;
 import com.djavafactory.webapp.util.RequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
