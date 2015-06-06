@@ -24,7 +24,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,DonationRequestTests"
+        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,DonationItemTests,DonationRequestTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -349,5 +349,100 @@
             </steps>
         </webtest>
     </target>    <!--DonationRequest-END-->
+    <!--DonationItem-START-->
+    <!-- runs donationItem-related tests -->
+    <target name="DonationItemTests"
+            depends="SearchDonationItems,EditDonationItem,SaveDonationItem,AddDonationItem,DeleteDonationItem"
+            description="Call and executes all donationItem test cases (targets)">
+        <echo>Successfully ran all DonationItem UI tests!</echo>
+    </target>
+
+    <!-- Verify the donationItems list screen displays without errors -->
+    <target name="SearchDonationItems" description="Tests search for and displaying all donationItems">
+        <webtest name="searchDonationItems">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View DonationItem link" url="/donationItems"/>
+                <verifytitle description="we should see the donationItemList title"
+                    text=".*${donationItemList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the donationItemList title"
+                    text=".*${donationItemList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit donationItem screen displays without errors -->
+    <target name="EditDonationItem" description="Tests editing an existing DonationItem's information">
+        <webtest name="editDonationItem">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View DonationItem List" url="/donationItems"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the donationItemDetail title"
+                    text=".*${donationItemDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a donationItem and then save -->
+    <target name="SaveDonationItem" description="Tests editing and saving a donationItem">
+        <webtest name="saveDonationItem">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit DonationItem link" url="/donationItemform?id=-1"/>
+                <verifytitle description="we should see the donationItemDetail title"
+                    text=".*${donationItemDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${donationItemDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${donationItem.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new DonationItem -->
+    <target name="AddDonationItem" description="Adds a new DonationItem">
+        <webtest name="addDonationItem">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/donationItemform"/>
+                <verifytitle description="we should see the donationItemDetail title"
+                    text=".*${donationItemDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="DonationItem List appears if save successful"
+                    text=".*${donationItemList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${donationItem.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing donationItem -->
+    <target name="DeleteDonationItem" description="Deletes existing DonationItem">
+        <webtest name="deleteDonationItem">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit DonationItem link" url="/donationItemform?id=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display DonationItem List" text=".*${donationItemList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${donationItem.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--DonationItem-END-->
 </project>
+
 

@@ -1,6 +1,6 @@
 package com.djavafactory.dao;
 
-import com.djavafactory.dao.BaseDaoTestCase;
+import org.appfuse.dao.BaseDaoTestCase;
 import com.djavafactory.model.DonationItem;
 import org.springframework.dao.DataAccessException;
 

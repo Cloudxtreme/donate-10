@@ -16,6 +16,10 @@
         <!--DonationRequest-START-->
         <Menu name="DonationRequestMenu" title="donationRequestList.title" page="/donationRequests"/>
         <!--DonationRequest-END-->
+        <!--DonationItem-START-->
+        <Menu name="DonationItemMenu" title="donationItemList.title" page="/donationItems"/>
+        <!--DonationItem-END-->
     </Menus>
+
 
 </MenuConfig>
