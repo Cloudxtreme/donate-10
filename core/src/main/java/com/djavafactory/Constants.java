@@ -7,7 +7,7 @@ package com.djavafactory;
  * @author <a href="mailto:matt@raibledesigns.com">Matt Raible</a>
  */
 public final class Constants {
-
+  
     private Constants() {
         // hide me
     }
