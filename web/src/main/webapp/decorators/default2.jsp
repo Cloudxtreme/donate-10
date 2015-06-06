@@ -54,7 +54,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%--<a class="navbar-brand" href="#page-top"><img class="img-responsive" src="${base}/images/helpinghand/helpinghand.ninja-smallertitle.png" alt=""></a>--%>
       <a class="navbar-brand" href="#page-top">Helping Hand Ninjas</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -92,7 +94,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <img class="img-responsive" src="${base}/styles/helpinghand/img/profile.png" alt="">
+        <img class="img-responsive" src="${base}/images/helpinghand/logo_light.png" alt="">
         <div class="intro-text">
           <span class="name">Be a Ninja Helper!</span>
           <hr class="star-light">
