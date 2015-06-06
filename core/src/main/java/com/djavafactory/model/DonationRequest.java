@@ -5,13 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,7 +30,8 @@ public class DonationRequest extends BaseObject implements Serializable {
 	@XmlElement
 	private Address address = new Address();
 	private Long userId; 
-	
+	private User user;
+
 	private List<DonationItem> donationItems = new ArrayList<DonationItem>();
 	
 	
@@ -81,70 +76,23 @@ public class DonationRequest extends BaseObject implements Serializable {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return "DonationRequest [id=" + id + ", registeredDate="
-				+ registeredDate + ", expiredDate=" + expiredDate
-				+ ", address=" + address + ", userId=" + userId + "]";
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DonationRequest other = (DonationRequest) obj;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (expiredDate == null) {
-			if (other.expiredDate != null)
-				return false;
-		} else if (!expiredDate.equals(other.expiredDate))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (registeredDate == null) {
-			if (other.registeredDate != null)
-				return false;
-		} else if (!registeredDate.equals(other.registeredDate))
-			return false;
-		if (userId == null) {
-			if (other.userId != null)
-				return false;
-		} else if (!userId.equals(other.userId))
-			return false;
-		return true;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result
-				+ ((expiredDate == null) ? 0 : expiredDate.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result
-				+ ((registeredDate == null) ? 0 : registeredDate.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
-		return result;
-	}
-
+	@Column(name = "userId")
 	public Long getUserId() {
 		return userId;
 	}
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "userId", referencedColumnName = "id", insertable = false, updatable = false)
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Transient
@@ -156,4 +104,46 @@ public class DonationRequest extends BaseObject implements Serializable {
 		this.donationItems = donationItems;
 	}
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DonationRequest that = (DonationRequest) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (registeredDate != null ? !registeredDate.equals(that.registeredDate) : that.registeredDate != null)
+            return false;
+        if (expiredDate != null ? !expiredDate.equals(that.expiredDate) : that.expiredDate != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
+        if (user != null ? !user.equals(that.user) : that.user != null) return false;
+        return !(donationItems != null ? !donationItems.equals(that.donationItems) : that.donationItems != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (registeredDate != null ? registeredDate.hashCode() : 0);
+        result = 31 * result + (expiredDate != null ? expiredDate.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + (donationItems != null ? donationItems.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "DonationRequest{" +
+                "id=" + id +
+                ", registeredDate=" + registeredDate +
+                ", expiredDate=" + expiredDate +
+                ", address=" + address +
+                ", userId=" + userId +
+                ", user=" + user +
+                ", donationItems=" + donationItems +
+                '}';
+    }
 }

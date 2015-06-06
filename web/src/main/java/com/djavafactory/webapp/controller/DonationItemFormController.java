@@ -1,12 +1,9 @@
 package com.djavafactory.webapp.controller;
 
-import org.apache.commons.lang.StringUtils;
-import com.djavafactory.service.DonationItemManager;
 import com.djavafactory.model.DonationItem;
-import com.djavafactory.webapp.controller.BaseFormController;
-
+import com.djavafactory.service.DonationItemManager;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.Locale;
 
 @Controller
@@ -35,10 +33,11 @@ public class DonationItemFormController extends BaseFormController {
     @ModelAttribute
     @RequestMapping(method = RequestMethod.GET)
     protected DonationItem showForm(HttpServletRequest request)
-    throws Exception {
+            throws Exception {
         String id = request.getParameter("id");
 
         if (!StringUtils.isBlank(id)) {
+
             return donationItemManager.get(new Long(id));
         }
 
@@ -48,7 +47,7 @@ public class DonationItemFormController extends BaseFormController {
     @RequestMapping(method = RequestMethod.POST)
     public String onSubmit(DonationItem donationItem, BindingResult errors, HttpServletRequest request,
                            HttpServletResponse response)
-    throws Exception {
+            throws Exception {
         if (request.getParameter("cancel") != null) {
             return getCancelView();
         }
@@ -71,12 +70,19 @@ public class DonationItemFormController extends BaseFormController {
             donationItemManager.remove(donationItem.getId());
             saveMessage(request, getText("donationItem.deleted", locale));
         } else {
+            if (request.getParameter("donate") != null) {
+                donationItem.setDonatorUserId(getCurrentUser().getId());
+                donationItem.setDonatorUser(getCurrentUser());
+                donationItem.setDonatedDate(new Date());
+            }
+
+            donationItem.setDonationRequest(null);
             donationItemManager.save(donationItem);
             String key = (isNew) ? "donationItem.added" : "donationItem.updated";
             saveMessage(request, getText(key, locale));
 
             if (!isNew) {
-                success = "redirect:donationItemform?id=" + donationItem.getId();
+                success = "redirect:/donationItemform?id=" + donationItem.getId();
             }
         }
 

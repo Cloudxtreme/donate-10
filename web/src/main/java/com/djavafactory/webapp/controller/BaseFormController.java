@@ -12,9 +12,13 @@ import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
@@ -235,5 +239,17 @@ public class BaseFormController implements ServletContextAware {
 
     protected ServletContext getServletContext() {
         return servletContext;
+    }
+
+    @ModelAttribute("currentUser")
+    protected User getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = null;
+        if (auth != null && (auth.getPrincipal() instanceof UserDetails || auth.getPrincipal() instanceof User)) {
+            currentUser = (User) auth.getPrincipal();
+        } else if (auth != null && auth.getDetails() instanceof UserDetails) {
+            currentUser = (User) auth.getDetails();
+        }
+        return currentUser;
     }
 }

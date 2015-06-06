@@ -66,9 +66,9 @@ public class DonationItem {
         this.category = category;
     }
 
-    
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "request_id", nullable = false)
+
+    @ManyToOne
+    @JoinColumn(name = "request_id", referencedColumnName = "id", insertable = false, updatable = false)
     public DonationRequest getDonationRequest() {
         return donationRequest;
     }
