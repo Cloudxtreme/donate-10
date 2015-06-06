@@ -15,6 +15,9 @@
     <!--DonationRequest-START-->
     <menu:displayMenu name="DonationRequestMenu"/>
     <!--DonationRequest-END-->
+    <!--DonationItem-START-->
+    <menu:displayMenu name="DonationItemMenu"/>
+    <!--DonationItem-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

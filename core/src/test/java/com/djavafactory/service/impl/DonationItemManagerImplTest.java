@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.djavafactory.dao.DonationItemDao;
 import com.djavafactory.model.DonationItem;
-import com.djavafactory.service.impl.BaseManagerMockTestCase;
+import org.appfuse.service.impl.BaseManagerMockTestCase;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
