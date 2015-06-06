@@ -5,3 +5,4 @@ web/donate-web.iml
 core/donate-core.iml
 core/target
 web/target
+web/velocity.log
