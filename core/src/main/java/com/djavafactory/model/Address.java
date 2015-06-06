@@ -20,7 +20,7 @@ import org.hibernate.search.annotations.Indexed;
 @Indexed
 public class Address extends BaseObject implements Serializable {
     private static final long serialVersionUID = 3617859655330969141L;
-    private String address;
+    private String address; 
     private String city;
     private String province;
     private String country;

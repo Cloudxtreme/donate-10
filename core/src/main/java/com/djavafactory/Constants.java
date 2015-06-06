@@ -7,15 +7,15 @@ package com.djavafactory;
  * @author <a href="mailto:matt@raibledesigns.com">Matt Raible</a>
  */
 public final class Constants {
-
+  
     private Constants() {
         // hide me
     }
     //~ Static fields/initializers =============================================
-
+   
     /**
      * Assets Version constant
-     */
+     */   
     public static final String ASSETS_VERSION = "assetsVersion";
     /**
      * The name of the ResourceBundle used in this application
