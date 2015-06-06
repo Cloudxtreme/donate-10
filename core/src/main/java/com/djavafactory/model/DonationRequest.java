@@ -12,7 +12,7 @@ import org.hibernate.search.annotations.IndexedEmbedded;
 @Table(name = "donation_request")
 public class DonationRequest extends BaseObject implements Serializable {
 
-	
+
 	/**
 	 * 
 	 */
