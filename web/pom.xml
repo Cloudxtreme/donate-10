@@ -12,7 +12,7 @@
     
     <artifactId>donate-web</artifactId>
     <packaging>war</packaging>
-    <name>AppFuse Modular Application - Web (Spring MVC)</name>
+    <name>Donate - Web (Spring MVC)</name>
 
     <build>
         <plugins>
