@@ -54,7 +54,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand" href="#page-top">Helping Hand Ninjas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,7 +98,7 @@
   </div>
 </header>
 
-<!-- Doante Grid Section -->
+<!-- Donate Grid Section -->
 <section id="donate">
   <div class="container">
     <div class="row">
