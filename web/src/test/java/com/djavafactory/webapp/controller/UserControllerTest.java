@@ -1,13 +1,13 @@
 package com.djavafactory.webapp.controller;
 
-import org.appfuse.Constants;
+import com.djavafactory.Constants;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
-import org.appfuse.service.UserManager;
+import com.djavafactory.service.UserManager;
 
 import static org.junit.Assert.*;
 

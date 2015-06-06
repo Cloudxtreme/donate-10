@@ -1,8 +1,8 @@
 package com.djavafactory.webapp.controller;
 
-import org.appfuse.Constants;
-import org.appfuse.dao.SearchException;
-import org.appfuse.service.UserManager;
+import com.djavafactory.Constants;
+import com.djavafactory.dao.SearchException;
+import com.djavafactory.service.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ExtendedModelMap;
