@@ -349,7 +349,7 @@
             <h2>Project Title</h2>
             <hr class="star-primary">
             <img src="${base}/styles/helpinghand/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+            <p>Yep..donate a cake. We love cakes</p>
             <ul class="list-inline item-details">
               <li>Client:
                 <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -389,7 +389,7 @@
             <h2>Project Title</h2>
             <hr class="star-primary">
             <img src="${base}/styles/helpinghand/img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+            <p>We could use some tents</p>
             <ul class="list-inline item-details">
               <li>Client:
                 <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -429,7 +429,7 @@
             <h2>Project Title</h2>
             <hr class="star-primary">
             <img src="${base}/styles/helpinghand/img/portfolio/game.png" class="img-responsive img-centered" alt="">
-            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+            <p>Think of those poor people without game consoles</p>
             <ul class="list-inline item-details">
               <li>Client:
                 <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -469,7 +469,7 @@
             <h2>Project Title</h2>
             <hr class="star-primary">
             <img src="${base}/styles/helpinghand/img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+            <p>We could use a safe</p>
             <ul class="list-inline item-details">
               <li>Client:
                 <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -509,7 +509,7 @@
             <h2>Project Title</h2>
             <hr class="star-primary">
             <img src="${base}/styles/helpinghand/img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+            <p>All together now...We all live in the yellow submarine</p>
             <ul class="list-inline item-details">
               <li>Client:
                 <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
