@@ -1,11 +1,15 @@
 package com.djavafactory.model;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
@@ -18,12 +22,18 @@ import org.hibernate.search.annotations.Indexed;
  */
 @Embeddable
 @Indexed
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Address extends BaseObject implements Serializable {
     private static final long serialVersionUID = 3617859655330969141L;
-    private String address;
+    @XmlElement
+    private String address; 
+    @XmlElement
     private String city;
+    @XmlElement
     private String province;
+    @XmlElement
     private String country;
+    @XmlElement
     private String postalCode;
 
     @Column(length = 150)

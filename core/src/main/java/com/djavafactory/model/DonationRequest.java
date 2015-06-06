@@ -1,7 +1,9 @@
 package com.djavafactory.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -9,23 +11,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import org.hibernate.search.annotations.IndexedEmbedded;
 
 @Entity
 @Table(name = "donation_request")
+@XmlAccessorType(XmlAccessType.NONE)
 public class DonationRequest extends BaseObject implements Serializable {
 
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6174622544839755386L;
 	private Long id;
+	@XmlElement
 	private Date registeredDate;
+	@XmlElement
 	private Date expiredDate;
+	@XmlElement
 	private Address address = new Address();
 	private Long userId; 
+	
+	private List<DonationItem> donationItems = new ArrayList<DonationItem>();
 	
 	
 	public DonationRequest() {
@@ -34,6 +46,7 @@ public class DonationRequest extends BaseObject implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@XmlTransient
 	public Long getId() {
 		return id;
 	}
@@ -132,6 +145,15 @@ public class DonationRequest extends BaseObject implements Serializable {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	@Transient
+	public List<DonationItem> getDonationItems() {
+		return donationItems;
+	}
+
+	public void setDonationItems(List<DonationItem> donationItems) {
+		this.donationItems = donationItems;
 	}
 
 }

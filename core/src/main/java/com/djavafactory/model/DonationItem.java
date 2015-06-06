@@ -1,22 +1,38 @@
 package com.djavafactory.model;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Created by toni on 6/6/15.
  */
 @Entity
 @Table(name = "donation_item")
+@XmlAccessorType(XmlAccessType.NONE)
 public class DonationItem {
     private Long id;
+    @XmlElement
     private String itemDescription;
+    @XmlElement
     private Integer qty;
+    @XmlElement
     private ItemCategory category;
     private DonationRequest donationRequest;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    
     public Long getId() {
         return id;
     }
@@ -52,6 +68,7 @@ public class DonationItem {
         this.category = category;
     }
 
+    
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "request_id", nullable = false)
     public DonationRequest getDonationRequest() {
