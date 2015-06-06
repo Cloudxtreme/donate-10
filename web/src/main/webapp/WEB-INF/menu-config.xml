@@ -9,6 +9,7 @@
         <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" page="/admin/users">
             <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>
             <Item name="ActiveUsers" title="home.activeUsers" page="/admin/activeUsers"/>
+            <Item name="contactform" title="contactList.title" page="/contacts"/>
             <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/>
             <Item name="FileUpload" title="menu.selectFile" page="/fileupload"/>
         </Menu>
