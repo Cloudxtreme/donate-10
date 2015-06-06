@@ -1,4 +1,4 @@
 cd core
-rm -Rf com.angkasa.model.*
+rm -Rf com.djavafactory.model.*
 cd ../
 mvn clean

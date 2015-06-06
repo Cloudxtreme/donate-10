@@ -62,5 +62,18 @@
         <form name="organization">
         </form>
         <!--Organization-END-->
+        <!--Contact-START-->
+        <form name="contact">
+            <field property="email" depends="required">
+                <arg key="contact.email"/>
+            </field>
+            <field property="message" depends="required">
+                <arg key="contact.message"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="contact.name"/>
+            </field>
+        </form>
+        <!--Contact-END-->
     </formset>
 </form-validation>

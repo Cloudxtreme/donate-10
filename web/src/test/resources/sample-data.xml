@@ -120,6 +120,7 @@
         </row>
     </table>
 
+    <!--DonationRequest-END-->
     <!--Organization-START-->
     <table name="Organization">
         <column>id</column>

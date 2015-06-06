@@ -12,5 +12,6 @@
         <mapping class="com.djavafactory.model.ItemCategory"/>
         <mapping class="com.djavafactory.model.DonationItem"/>
         <mapping class="com.djavafactory.model.DonationRequest"/>
+        <mapping class="com.djavafactory.model.Contact"/>
     </session-factory>
 </hibernate-configuration>

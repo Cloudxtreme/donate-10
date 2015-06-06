@@ -1,15 +1,11 @@
 package com.djavafactory.dao;
 
-import org.appfuse.dao.BaseDaoTestCase;
 import com.djavafactory.model.DonationItem;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
+import static org.junit.Assert.assertNotNull;
 
 public class DonationItemDaoTest extends BaseDaoTestCase {
     @Autowired

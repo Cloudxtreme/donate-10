@@ -6,3 +6,10 @@ core/donate-core.iml
 core/target
 web/target
 web/velocity.log
+core/com.djavafactory.model.User/
+web/.settings/org.eclipse.wst.jsdt.ui.superType.name
+web/.settings/org.eclipse.wst.jsdt.ui.superType.container
+web/.settings/org.eclipse.core.resources.prefs
+web/.gitignore
+core/com.djavafactory.model.Organization/segments_1
+sh.exe.stackdump

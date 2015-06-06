@@ -15,6 +15,8 @@
 
     <jaxws:endpoint id="userService" implementor="#userManager" address="/UserService"/>
     <!-- Add new endpoints for additional services you'd like to expose -->
+    <jaxws:endpoint id="donationRequestService" implementor="#donationRequestManager" address="/DonationRequestService"/>
+    
     
     <jaxrs:server address="/api">
         <jaxrs:features>
@@ -22,6 +24,7 @@
         </jaxrs:features>
         <jaxrs:serviceBeans>
             <ref bean="userManager"/>
+            <ref bean="donationRequestManager"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jsonProvider"/>

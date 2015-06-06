@@ -1,14 +1,19 @@
 package com.djavafactory.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Created by toni on 6/6/15.
  */
 @Entity
 @Table(name = "item_category")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ItemCategory {
     private Long id;
+    @XmlElement
     private String name;
 
     @Id
