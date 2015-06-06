@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.djavafactory.dao.ContactDao;
 import com.djavafactory.model.Contact;
-import org.appfuse.service.impl.BaseManagerMockTestCase;
+import com.djavafactory.service.impl.BaseManagerMockTestCase;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
