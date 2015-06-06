@@ -1,7 +1,7 @@
 package com.djavafactory.webapp.controller;
 
-import com.djavafactory.service.DonationItemManager;
-import com.djavafactory.model.DonationItem;
+import com.djavafactory.service.ContactManager;
+import com.djavafactory.model.Contact;
 
 import com.djavafactory.webapp.controller.BaseControllerTestCase;
 import org.springframework.ui.Model;
@@ -14,31 +14,28 @@ import java.util.Map;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class DonationItemControllerTest extends BaseControllerTestCase {
+public class ContactControllerTest extends BaseControllerTestCase {
     @Autowired
-    private DonationItemController controller;
+    private ContactController controller;
 
     @Test
     public void testHandleRequest() throws Exception {
         Model model = controller.handleRequest(null);
         Map m = model.asMap();
-//        assertNotNull(m.get("donationItemList"));
-//        assertTrue(((List) m.get("donationItemList")).size() >= 0);
-        assertTrue(true);
+        assertNotNull(m.get("contactList"));
+        assertTrue(((List) m.get("contactList")).size() > 0);
     }
 
-    /*
     @Test
     public void testSearch() throws Exception {
         // regenerate indexes
-        DonationItemManager donationItemManager = (DonationItemManager) applicationContext.getBean("donationItemManager");
-        donationItemManager.reindex();
+        ContactManager contactManager = (ContactManager) applicationContext.getBean("contactManager");
+        contactManager.reindex();
 
         Model model = controller.handleRequest("*");
         Map m = model.asMap();
-        List results = (List) m.get("donationItemList");
+        List results = (List) m.get("contactList");
         assertNotNull(results);
         assertEquals(3, results.size());
     }
-    */
 }

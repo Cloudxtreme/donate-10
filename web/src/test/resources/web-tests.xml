@@ -24,7 +24,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,DonationItemTests,DonationRequestTests,OrganizationTests"
+        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,ContactTests,DonationItemTests,DonationRequestTests,OrganizationTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -537,6 +537,107 @@
             </steps>
         </webtest>
     </target>    <!--Organization-END-->
+    <!--Contact-START-->
+    <!-- runs contact-related tests -->
+    <target name="ContactTests"
+            depends="SearchContacts,EditContact,SaveContact,AddContact,DeleteContact"
+            description="Call and executes all contact test cases (targets)">
+        <echo>Successfully ran all Contact UI tests!</echo>
+    </target>
+
+    <!-- Verify the contacts list screen displays without errors -->
+    <target name="SearchContacts" description="Tests search for and displaying all contacts">
+        <webtest name="searchContacts">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View Contact link" url="/contacts"/>
+                <verifytitle description="we should see the contactList title"
+                    text=".*${contactList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the contactList title"
+                    text=".*${contactList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit contact screen displays without errors -->
+    <target name="EditContact" description="Tests editing an existing Contact's information">
+        <webtest name="editContact">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View Contact List" url="/contacts"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the contactDetail title"
+                    text=".*${contactDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a contact and then save -->
+    <target name="SaveContact" description="Tests editing and saving a contact">
+        <webtest name="saveContact">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Contact link" url="/contactform?id=-1"/>
+                <verifytitle description="we should see the contactDetail title"
+                    text=".*${contactDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+                <setInputField description="set email" name="email" value="BnJtBbBqTqYmLyYrJuByEoBiXlWqEiVcGhVkQiHfKmKbEbUkQcCyExRxYqDvNcAmYhOrUcGoCkYzMeYcBfJiTvDbDySlRfNpSvPjJwPkNmFaJaOsSyTbKbPwQzNcTrYpXuDaVlVhKdPuPxRcYgRgZpXfAmDeOgCfRiHcVdUaMbWfDeQuHpRyZlYyEyZfGfAfIoAfSgNfPjXdMvSvIeRhTvUyWaNaUcFuBkFgXsNdGqNlWqCyYpAqLgUpXtDjHyH"/>
+                <setInputField description="set message" name="message" value="IqDjWuVwVeUbJyFzCwUjKnGhTlOvYpIqQqPaBoPzOhSnXkPzYjBfSfYyKlTmOpLpBtBxIwDlFxGrPlXwXhKhMuEeDqEcHbInCnIzQtDzJaTsPpJkHfHkUgVaNkGmKhPqFaSzEaAzIhKuXvJnRaNpMbIvWeYfAtDmVbWbOtVaJpFlWyDtQpCkYpHsFyLsJeKfQpGsKcXpNnYgXaHxRwYjEgVaLdSmDoMtFhFaZdIlInKzRkZxIwHyCfNyZoJaDtZ"/>
+                <setInputField description="set name" name="name" value="IqIkBbKwUyVeQbPvZpNqNgJdNjUbLdCpIuRyRhFgVmFfHbWsErDwUlKkXhQsUcNkHkGnFnLjSuIeNeMgXuNpFyHxVuAiGkOdEsUeAmSdTaXjPpXvUlCuYvTmHtBvYsZrZhJnOxMgKyRpRpPxBsPsVjIuPrGiRrHcKbXkJlQkHgByGtNjSdOzTcMxNpDoEaZoYnFoWmGsTeOqCxOgIjNwFuYoUjXlJfMuGiUnOmQfAhCoAeOvZpCbDrKgUcVdCvR"/>
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${contactDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${contact.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new Contact -->
+    <target name="AddContact" description="Adds a new Contact">
+        <webtest name="addContact">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/contactform"/>
+                <verifytitle description="we should see the contactDetail title"
+                    text=".*${contactDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+                <setInputField description="set email" name="email" value="NoEoDmEoBsRqUhEfQhSqNwGiXqYdHyPtOmTcRzPuIfHdFdKoDyEvNqVhMgZvFkJxPeAzYmUySqMvXkGmGfYrAyWcGzPlXeSwWlUjCxCjAyXoEpXlMdKxIqCtVfUzQzMaLjOtWvOmDfRjDgMvZiDgBpFzVkBjLfOkFcMiCmUiDhRqTgUzFsFiCnRtQgIxIfElAxRdQmOgRrCbPrUaLyKoAbTlLgBdDoGjWjWvZbNaTnKhLwZoWmGmUwXlLjAwJwZ"/>
+                <setInputField description="set message" name="message" value="LrBzKzPaAmBmIoOhUsRmDoRhHmZrKjLuWyEkLwFmVhDsSsMwWwDrXuMqOtEkEtOkRyTcHlRtZkEaOdAqLkLcKrHiLuDrQfTgVdSiXsVuZjDgAwJlNrEbUrSqGxAmCiQeWpQhPiTpLzZsYiPiOlVgHnFlMoScEsLfMxKeCaPpXpFfVbHySlLgUeLyUdFcHrNwNiHqAmMwHgQvZxHiOaCtAjOuLeCnMpMhEbGbLbTxEpRsAdRaVdYmQdJiAiCjNdW"/>
+                <setInputField description="set name" name="name" value="DnVkPtJiQvQoEjFyHnNiRtPdJgGhLcFbJbVxCtMlNaYxEjMrMfHeVrHcTeAeDmPmGvSxJbXsEkAsSjFdArMrPaKxPpLeVeLvCoWvWsJaWzZiWdAlHrCgUtJkPpGkHeKvLcFbIaGfNzLuTrIpXdInBtVwPmMpLdQzIeXmWsAvBqSoBxEfGiAaKqTeIcMhHwIxFiKtIeYsQvDgMaJcHoJoCpRlPxUkFhKkLdWlTgCrNeUsSxPlKbYhYvOuQyNxKkK"/>
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="Contact List appears if save successful"
+                    text=".*${contactList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${contact.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing contact -->
+    <target name="DeleteContact" description="Deletes existing Contact">
+        <webtest name="deleteContact">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Contact link" url="/contactform?id=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display Contact List" text=".*${contactList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${contact.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--Contact-END-->
 </project>
+
 
 
