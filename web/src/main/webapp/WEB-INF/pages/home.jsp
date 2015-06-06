@@ -151,7 +151,7 @@
 			                        <img class="img-responsive img-circle" src="/images/Hand-GIVE.png" />
 			                    </div>
 			                    <div class="panel-body text-center">
-			                        <h4 class="panel-header"><a href='<c:url value="/showCurrentDonationRequests"/>'><b><fmt:message key="home.giveHelp"/></b></a></h4>
+			                        <h4 class="panel-header"><a href='<c:url value="/donationItems"/>'><b><fmt:message key="home.giveHelp"/></b></a></h4>
 			                    </div>
 			            	</div>  
 			    		</div>
