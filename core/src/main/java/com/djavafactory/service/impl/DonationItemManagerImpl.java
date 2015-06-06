@@ -21,4 +21,9 @@ public class DonationItemManagerImpl extends GenericManagerImpl<DonationItem, Lo
         super(donationItemDao);
         this.donationItemDao = donationItemDao;
     }
+
+    @Override
+    public List<DonationItem> getActiveItems() {
+        return donationItemDao.getActiveItems();
+    }
 }

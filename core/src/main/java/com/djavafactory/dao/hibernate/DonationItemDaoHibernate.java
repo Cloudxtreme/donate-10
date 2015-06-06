@@ -1,7 +1,9 @@
 package com.djavafactory.dao.hibernate;
 
+import java.util.Date;
 import java.util.List;
 
+import com.djavafactory.util.DateUtil;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
@@ -23,6 +25,15 @@ public class DonationItemDaoHibernate extends GenericDaoHibernate<DonationItem, 
 		Criteria criteria = getSession().createCriteria(DonationItem.class);
 //		criteria.createAlias("donationRequest", "donationRequest");
 		criteria.add(Restrictions.eq("donationRequest.id", requestId));
+		return criteria.list();
+	}
+
+	@Override
+	public List<DonationItem> getActiveItems() {
+		Criteria criteria = getSession().createCriteria(DonationItem.class);
+		criteria.createAlias("donationRequest", "donationRequest");
+		criteria.add(Restrictions.ge("donationRequest.expiredDate", DateUtil.getDateToday()));
+		criteria.add(Restrictions.isNotNull("donatedDate"));
 		return criteria.list();
 	}
 }

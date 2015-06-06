@@ -23,17 +23,9 @@
 
   <!-- Custom Fonts -->
   <link href="${base}/styles/helpinghand/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
 
 
   <decorator:head/>
@@ -63,15 +55,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-
-
-
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#donate">Donate</a>
+          <a href="#portfolio">Donate</a>
         </li>
         <li class="page-scroll">
           <a href="#about">About</a>
@@ -106,7 +95,7 @@
 </header>
 
 <!-- Donate Grid Section -->
-<section id="donate">
+<section id="portfolio">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -196,7 +185,6 @@
         <p>Go on donate and grab your Ninja points</p>
       </div>
 
-
     </div>
   </div>
 </section>
@@ -263,7 +251,7 @@
       <div class="row">
         <div class="footer-col col-md-4">
           <h3>Location</h3>
-          <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+          <p>B-2-2 Plaza Damas, Jalan Sri Hartamas 1, <br>50480 Kuala Lumpur, Malaysia</p>
         </div>
         <div class="footer-col col-md-4">
           <h3>Around the Web</h3>
@@ -281,8 +269,8 @@
           </ul>
         </div>
         <div class="footer-col col-md-4">
-          <h3>About Freelancer</h3>
-          <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+          <h3>About Helping Hand Ninja</h3>
+          <p>Java developers on steriods</p>
         </div>
       </div>
     </div>
@@ -291,7 +279,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          Copyright &copy; Your Website 2014
+          Copyright &copy; djavafactory.com 2015
         </div>
       </div>
     </div>
@@ -343,6 +331,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -380,6 +371,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -417,6 +411,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -454,6 +451,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -491,6 +491,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">

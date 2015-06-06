@@ -31,6 +31,8 @@ public final class DateUtil {
     private DateUtil() {
     }
 
+
+
     /**
      * Return default datePattern (MM/dd/yyyy)
      *
@@ -130,6 +132,10 @@ public final class DateUtil {
         cal.setTime(convertStringToDate(todayAsString));
 
         return cal;
+    }
+
+    public static Date getDateToday(){
+        return new Date();
     }
 
     /**
