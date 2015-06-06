@@ -1,17 +1,19 @@
 package com.djavafactory.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by toni on 6/6/15.
  */
 @Entity
-@Table(name = "DONATION")
+@Table(name = "donation_item")
 public class DonationItem {
     private Long id;
     private String itemDescription;
     private Integer qty;
     private ItemCategory category;
+    private DonationRequest donationRequest;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +25,7 @@ public class DonationItem {
         this.id = id;
     }
 
+    @Column(name = "description")
     public String getItemDescription() {
         return itemDescription;
     }
@@ -40,7 +43,7 @@ public class DonationItem {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "CATEGORY_ID", nullable = true)
+    @JoinColumn(name = "category_id", nullable = true)
     public ItemCategory getCategory() {
         return category;
     }
@@ -49,6 +52,15 @@ public class DonationItem {
         this.category = category;
     }
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "request_id", nullable = false)
+    public DonationRequest getDonationRequest() {
+        return donationRequest;
+    }
+
+    public void setDonationRequest(DonationRequest donationRequest) {
+        this.donationRequest = donationRequest;
+    }
 
     public boolean equals(Object o) {
         if (this == o) return true;
