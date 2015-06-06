@@ -1,22 +1,18 @@
 package com.djavafactory.webapp.controller;
 
-import com.djavafactory.webapp.controller.BaseControllerTestCase;
 import com.djavafactory.model.DonationItem;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DonationItemFormControllerTest extends BaseControllerTestCase {
     @Autowired
-    private DonationItemFormController form;
+    private DonationRequestItemFormController form;
     private DonationItem donationItem;
     private MockHttpServletRequest request;
 

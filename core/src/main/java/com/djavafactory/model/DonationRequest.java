@@ -2,13 +2,9 @@ package com.djavafactory.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.search.annotations.IndexedEmbedded;
 
@@ -25,8 +21,9 @@ public class DonationRequest extends BaseObject implements Serializable {
 	private Date registeredDate;
 	private Date expiredDate;
 	private Address address = new Address();
-	private Long userId; 
-	
+	private Long userId;
+	private String donationItem;
+	private Integer donationQty;
 	
 	public DonationRequest() {
 		super();
@@ -66,6 +63,24 @@ public class DonationRequest extends BaseObject implements Serializable {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	@Column(name = "donation_item")
+	public String getDonationItem() {
+		return donationItem;
+	}
+
+	public void setDonationItem(String donationItem) {
+		this.donationItem = donationItem;
+	}
+
+	@Column(name = "donation_qty")
+	public Integer getDonationQty() {
+		return donationQty;
+	}
+
+	public void setDonationQty(Integer donationQty) {
+		this.donationQty = donationQty;
 	}
 
 	@Override

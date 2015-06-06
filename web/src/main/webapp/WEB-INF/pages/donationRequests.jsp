@@ -30,7 +30,7 @@
     <fmt:message key="donationRequestList.message"/>
 
     <div id="actions" class="btn-group">
-        <a href='<c:url value="/donationRequestform"/>' class="btn btn-primary">
+        <a href='<c:url value="/donationRequestForm"/>' class="btn btn-primary">
             <i class="icon-plus icon-white"></i> <fmt:message key="button.add"/></a>
         <a href='<c:url value="/home"/>' class="btn btn-default"><i class="icon-ok"></i> <fmt:message key="button.done"/></a>
     </div>

@@ -119,34 +119,7 @@
             <value description="role_id">-2</value>
         </row>
     </table>
-    <!--DonationRequest-START-->
-    <table name="donation_request">
-        <column>id</column>
-        <column>expiredDate</column>
-        <column>registeredDate</column>
-        <column>userId</column>
-    <row>
-        <value description="id">-1</value>
-        <value description="expiredDate">2015-06-06</value>
-        <value description="registeredDate">2015-06-06</value>
-        <value description="userId">8099035473812864000</value>
-    </row>
-    <row>
-        <value description="id">-2</value>
-        <value description="expiredDate">2015-06-06</value>
-        <value description="registeredDate">2015-06-06</value>
-        <value description="userId">3201485091345408000</value>
-    </row>
-    <row>
-        <value description="id">-3</value>
-        <value description="expiredDate">2015-06-06</value>
-        <value description="registeredDate">2015-06-06</value>
-        <value description="userId">4526488631696088064</value>
-    </row>
-    </table>
-    <!--DonationRequest-END-->
 
-    <!--DonationRequest-END-->
     <!--Organization-START-->
     <table name="Organization">
         <column>id</column>

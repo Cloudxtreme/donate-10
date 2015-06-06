@@ -1,75 +1,94 @@
 <%@ include file="/common/taglibs.jsp"%>
 
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <title><fmt:message key="donationRequestDetail.title"/></title>
-    <meta name="heading" content="<fmt:message key='donationRequestDetail.heading'/>"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function() {
+            $( "#dtRequired" ).datepicker();
+            $( "#dtExpire" ).datepicker();
+        });
+    </script>
 </head>
 
-<c:set var="delObject" scope="request"><fmt:message key="donationRequestList.donationRequest"/></c:set>
-<script type="text/javascript">var msgDelConfirm =
-   "<fmt:message key="delete.confirm"><fmt:param value="${delObject}"/></fmt:message>";
-</script>
+<body>
 
-<div class="col-sm-2">
-    <h2><fmt:message key="donationRequestDetail.heading"/></h2>
-    <fmt:message key="donationRequestDetail.message"/>
+<div id="message"></div>
+<table>
+    <tr>
+        <td>
+            Donation Required : <input type="text" id="dtRequired">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Donation Expire : <input type="text" id="dtExpire">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address : <textarea id="txtAddress" name="txtAddress" rows="10" cols="70"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Item Name : <input type="text" id="txtItemName" name="txtItemName" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Item Qty : <input type="text" id="txtItemQty" name="txtItemQty" />
+        </td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td>
+            <input type="button" id="btnAddRequest" value="Add Request" onclick="submitRequest();" />
+            <input type="button" id="btnCompleteRequest" value="Complete Request" onclick="submitCompleteRequest();" />
+        </td>
+    </tr>
+</table>
+
 </div>
 
-<div class="col-sm-7">
-<form:errors path="*" cssClass="alert alert-danger alert-dismissable" element="div"/>
-<form:form commandName="donationRequest" method="post" action="donationRequestform" cssClass="well"
-           id="donationRequestForm" onsubmit="return validateDonationRequest(this)">
-<form:hidden path="id"/>
-    <spring:bind path="donationRequest.expiredDate">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="donationRequest.expiredDate" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="expiredDate" id="expiredDate" size="11" title="date" datepicker="true"/>
-        <form:errors path="expiredDate" cssClass="help-block"/>
-    </div>
-    <spring:bind path="donationRequest.registeredDate">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="donationRequest.registeredDate" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="registeredDate" id="registeredDate" size="11" title="date" datepicker="true"/>
-        <form:errors path="registeredDate" cssClass="help-block"/>
-    </div>
-    <spring:bind path="donationRequest.userId">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="donationRequest.userId" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="userId" id="userId"  maxlength="255"/>
-        <form:errors path="userId" cssClass="help-block"/>
-    </div>
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary" name="save" onclick="bCancel=false">
-            <i class="icon-ok icon-white"></i> <fmt:message key="button.save"/>
-        </button>
-        <c:if test="${not empty donationRequest.id}">
-            <button type="submit" class="btn btn-warning" name="delete" onclick="bCancel=true;return confirmMessage(msgDelConfirm)">
-                <i class="icon-trash icon-white"></i> <fmt:message key="button.delete"/>
-            </button>
-        </c:if>
-
-        <button type="submit" class="btn btn-default" name="cancel" onclick="bCancel=true">
-            <i class="icon-remove"></i> <fmt:message key="button.cancel"/>
-        </button>
-    </div>
-</form:form>
-</div>
-
-<v:javascript formName="donationRequest" cdata="false" dynamicJavascript="true" staticJavascript="false"/>
-<script type="text/javascript" src="<c:url value='/scripts/validator.jsp'/>"></script>
-
-<link rel="stylesheet" type="text/css" media="all" href="<c:url value='/webjars/bootstrap-datepicker/1.2.0/css/datepicker.css'/>" />
-<script type="text/javascript" src="<c:url value='/webjars/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.js'/>"></script>
-<c:if test="${pageContext.request.locale.language != 'en'}">
-<script type="text/javascript" src="<c:url value='/webjars/bootstrap-datepicker/1.2.0/js/locales/bootstrap-datepicker.${pageContext.request.locale.language}.js'/>"></script>
-</c:if>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("input[type='text']:visible:enabled:first", document.forms['donationRequestForm']).focus();
-        $('.text-right.date').datepicker({format: "<fmt:message key='calendar.format'/>", weekStart: "<fmt:message key='calendar.weekstart'/>", language: '${pageContext.request.locale.language}'});
+
     });
+
+    function submitCompleteRequest() {
+        $.post("/donationRequestform", function() {
+            console.log("done");
+            $("#message").html("Request Completed!")
+        });
+    }
+
+    function submitRequest() {
+        dateRequired = $("#dtRequired").val();
+        dateExpire = $("#dtExpire").val();
+        address = $("#txtAddress").val();
+        itemName = $("#txtItemName").val();
+        itemQty = $("#txtItemQty").val();
+
+        $.post("/donationRequestItemform", {dateRequired: dateRequired, dateExpire: dateExpire,
+            address: address, itemName: itemName, itemQty: itemQty}, function() {
+            console.log("done");
+            $("#dtRequired").val("");
+            $("#dtExpire").val("");
+            $("#txtAddress").val("");
+            $("#txtItemName").val("");
+            $("#txtItemQty").val("");
+
+            $("#message").html("Request added!")
+        });
+
+    }
 </script>
+</body>
+
+
