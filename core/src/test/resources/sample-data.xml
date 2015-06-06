@@ -119,4 +119,50 @@
             <value description="role_id">-2</value>
         </row>
     </table>
+    <!--ItemCategory-START-->
+    <table name="ITEM_CATEGORY">
+        <column>id</column>
+        <column>name</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="name">CnTdIfCcDyBzJvQbOdFeKmXpDkLrRfNqWvJbRgWuJgUiZgZbKtSoIhRjWiRjEjTkGwCeJmFpYsFzMqQdJnLtIjYgXyTcDwVnRlEdAkVkRsKpFsExNmFxRwNoYvJyLuOdXoWbHgSdVlTaWlHuEoGhGrDyUnOqUuSkOgMoDnLdUpHxOiUxFkPqVdVcFyClFpSoXsZbYwRvSwCnLuOjHwTqKzOjXhIzHiDdYrOpHcVoXvDbCzXrWeInBnAxTxXwEmS</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="name">TsXoNsTbTyFgAsNxKqXiFtIqTiRwWmAjSvDxOtQpHnGkUxYpEiSgNsXeOpNgApNvHfEfJiPbGeGfTkVlXnUyNtQdFyFjOeVdWkCtZjXhRkQqGqUiEuDbLbArZiKdCbApRnBhToHgScCbFlFiAhKkNeKrQzWuLbCaNcYgLoXjDeWoQmNeWjWfIcIdZxZoDjTyYsQfOeYxXhOjRlPwPjMqGwZvVbScQfNpKeErZaXtZeXqRwLeHbPqDfBzQlLpPhW</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="name">NdRoUwLyJpWzMrVgYpVnZkOnPfViQjEdXpMkVpLnZpIqEcGkKyNlSfDeOxDwVwGyZxTcJlEcFbKfTqHaKrGvMwOxNnUoGoNpPyLfFwLpPgVhQjXpNjSuPtNqMfTdNwEbHaTcFnMmRqRxUgVbZtMtAcRaCyBrUmUyFrPnMiEmGmXaXwQvXmUmQkXdWwQdBlJtXvNcVyHnTgIfXfIfYnKjXuVnXbFhDbCsOzOhMfEvCrQjSwRhZjWuPvLjRrNpBcB</value>
+    </row>
+    </table>
+    <!--ItemCategory-END-->
+    <!--DonationItem-START-->
+    <table name="DONATION">
+        <column>id</column>
+        <column>CATEGORY_ID</column>
+        <column>itemDescription</column>
+        <column>qty</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="CATEGORY_ID">-1</value>
+        <value description="itemDescription">BeVfCdPqTjOoHdFpZjMlXbPhMsTaGyKuTeDePeXbIdFkEsKmRlOmOgEjEsHbWlWxOuShFuSlSmZvCbVlWjZtBdWkUnKlIlJgVwKlSbQvQfXuCiKkVjEcKyBbJrIxViHjXlLvLrEmKvBbFqZcHbCbHeGdSdEeXpPkCuXcOqHnSiExBnVdGrVdOkUpNuKtWcQkMsKcSlBwPvJmIsPqIqLsUpOfRrZjNaZyLiZqTkUeAbBcRxDwAbCwLrFeNcFpGxQ</value>
+        <value description="qty">1875871584</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="CATEGORY_ID">-2</value>
+        <value description="itemDescription">DrJtZlBlKlIxZcXbOzEtXcMnZkInGbLnHaKvGrIpKzKxUxMxRkDbBbTrCnYuEyQwGzUkWvQhFcLbRjKrYwDqYqYwRbFzRcAiHiXbEkPeSuLtMwDgAbDrTfPbNsReSeUjGuDhSnNfIyQiGfJuMwGsZlGnGqUqOiItEzGbPmChTeXgSdPdSpJhAbBvJgNyOqMrNyCmAhVfApMcXcYdCkVqRePoJlGhTaUpLqQjHqJvAaFaDzCmKbPrHvXuKpYzWhL</value>
+        <value description="qty">1892482744</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="CATEGORY_ID">-3</value>
+        <value description="itemDescription">GxYsPtKhZkMlApPnLwQdWtAmViLgTlVyHiXuPjJvLkAzYtPoCxIgQgMkHdDkUeDpAuSwYmBpHkKpSgIgMnMiQpBxBnXySuGnHbYaCfPwFpHaLsJiHzDtSlDkJeFgPgAgVnPiKyVhEiMlUsWqNpGjUoSvFrKhEkNeDgTdLpOrNzPlEiBdMsXrIxKhKaMtGsVvPpCsRmLwVqTcOrCqWiIxYwYhSzXiRuYpOmYcExWsKiNoJcBgFxAtLsMvMaTdFtW</value>
+        <value description="qty">647190200</value>
+    </row>
+    </table>
+    <!--DonationItem-END-->
 </dataset>
+
+
