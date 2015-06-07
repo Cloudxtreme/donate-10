@@ -10,11 +10,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
  * Created by user on 6/6/2015.
  */
 public class TwitterPostingManagerTest extends BaseManagerTestCase {
+
     @Autowired
-    @Qualifier(value = "twitterPostingManagerImpl")
     SocialPostingManager twitterPostingManager;
+
     @Test
     public void testPost() throws Exception{
-        twitterPostingManager.post("hello world");
+        try {
+            twitterPostingManager.post("hello world");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

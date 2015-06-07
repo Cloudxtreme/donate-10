@@ -1,5 +1,6 @@
 package com.djavafactory.service.impl;
 
+import java.util.HashSet;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -38,7 +39,7 @@ public class DonationRequestManagerImpl extends GenericManagerImpl<DonationReque
 		List<DonationRequest> requestList = donationRequestDao.getAll();
 		for (DonationRequest req: requestList) {
 			List<DonationItem> items = donationItemDao.findByDonationRequest(req.getId());
-			req.setDonationItems(items);
+			req.setDonationItems(new HashSet(items));
 		}
 		DonationInfoResponse res = new DonationInfoResponse();
 		res.setRequestList(requestList);

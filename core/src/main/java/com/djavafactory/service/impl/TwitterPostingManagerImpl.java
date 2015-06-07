@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by user on 6/6/2015.
  */
-@Component
+@Component(value = "twitterPostingManager")
 public class TwitterPostingManagerImpl implements SocialPostingManager {
 
     @Autowired

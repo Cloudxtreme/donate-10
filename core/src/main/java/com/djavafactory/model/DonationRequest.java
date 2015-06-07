@@ -2,7 +2,9 @@ package com.djavafactory.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -24,9 +26,21 @@ public class DonationRequest extends BaseObject implements Serializable {
 	private Long userId;
 	private String donationItem;
 	private Integer donationQty;
+
+	private Set<DonationItem> donationItems = new HashSet<DonationItem>();
 	
 	public DonationRequest() {
 		super();
+	}
+
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="donationRequest")
+	public Set<DonationItem> getDonationItems() {
+		return donationItems;
+	}
+
+	public void setDonationItems(Set<DonationItem> donationItems) {
+		this.donationItems = donationItems;
 	}
 
 	@Id

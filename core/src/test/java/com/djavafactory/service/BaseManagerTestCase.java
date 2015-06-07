@@ -12,7 +12,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 @ContextConfiguration(locations = {
-        "classpath:/applicationContext-resources.xml", "classpath:/applicationContext-dao.xml",
+        "classpath:/applicationContext-resources.xml", "classpath:/applicationContext-dao.xml","classpath:/twitter-template.xml",
         "classpath:/applicationContext-service.xml", "classpath*:/**/applicationContext.xml"
 })
 /**

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @author aka
  * @date: 06 June 2015
  */
-@Component
+@Component(value = "facebookPostingManager")
 public class FacebookPostingManagerImpl  implements SocialPostingManager{
 
 
